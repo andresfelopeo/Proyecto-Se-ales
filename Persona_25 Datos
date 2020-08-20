@@ -1,0 +1,21 @@
+x = zeros((5475-5067),128);
+
+for  k = 5067:1:5475
+    x(k-5066,:) = Acc_X(k,:);
+end
+
+activity_copy = activity';
+
+y={};
+
+for  j = 5067:1:5475
+    y{j-5066,1} = activity_copy{j};
+end
+
+
+
+Mdl = fitcknn(x,y,'NumNeighbors',6,'Standardize',1)
+
+test = Acc_X(1,:);
+
+prueba = predict(Mdl,test)
