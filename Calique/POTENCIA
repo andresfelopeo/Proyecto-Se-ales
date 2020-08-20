@@ -1,0 +1,13 @@
+function [poten] = POTENCIA(x)
+
+
+N = length(x);
+s=0;
+
+for i = 1:1:N
+    
+   s = s + (abs(x))^2;
+end
+
+poten = s/N;
+end 
